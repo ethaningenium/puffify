@@ -5,17 +5,19 @@ type IconPropsType = {
   Icon: LucideIcon;
   count?: number;
   stroke?: number;
+  text?: string;
 };
 
 const Icons = (props: IconPropsType) => {
   return (
-    <div className=" w-6 h-6 relative before:block before:absolute before:bg-transparent before:w-6 before:h-6 before:-z-10 before:scale-100 before:rounded-sm hover:before:scale-150 before:duration-300 hover:before:bg-slate-200 cursor-pointer">
+    <div className="flex gap-1 items-center h-6 relative cursor-pointer text-zinc-600 hover:text-zinc-900 duration-200">
       {props.count !== 0 && (
-        <span className=" text-white text-[10px] bg-red-500 absolute w-3 h-3 rounded-full flex justify-center items-center -top-1 -right-1 select-none cursor-pointer">
+        <span className=" text-white text-[10px] bg-red-500 absolute w-3 h-3 rounded-full flex justify-center items-center -top-1 -left-1 select-none cursor-pointer">
           {props.count}
         </span>
       )}
       <props.Icon strokeWidth={props.stroke} />
+      {props.text && <span className=" text-sm">{props.text}</span>}
     </div>
   );
 };
