@@ -1,5 +1,5 @@
-import Landing from "@/components/landing/Landing";
+import Header from "@/components/common/Header";
 
 export default function Home() {
-  return <Landing />;
+  return <Header />;
 }
